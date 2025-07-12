@@ -238,3 +238,52 @@ todoForm.onsubmit = e => {
     }
 };
 renderTodos();
+
+
+// === LICZNIK DYSTANSU ===
+let totalDistance = 0;
+let previousCoords = null;
+
+function toRadians(deg) {
+  return deg * Math.PI / 180;
+}
+
+function haversineDistance(coord1, coord2) {
+  const R = 6371;
+  const dLat = toRadians(coord2.lat - coord1.lat);
+  const dLon = toRadians(coord2.lon - coord1.lon);
+  const lat1 = toRadians(coord1.lat);
+  const lat2 = toRadians(coord2.lat);
+
+  const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+            Math.cos(lat1) * Math.cos(lat2) *
+            Math.sin(dLon / 2) * Math.sin(dLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c;
+}
+
+function updateDistanceDisplay() {
+  const el = document.getElementById('distance');
+  if (el) el.textContent = totalDistance.toFixed(2);
+}
+
+function trackLocation(position) {
+  const { latitude, longitude } = position.coords;
+  const currentCoords = { lat: latitude, lon: longitude };
+
+  if (previousCoords) {
+    const distance = haversineDistance(previousCoords, currentCoords);
+    if (distance > 0.01) {
+      totalDistance += distance;
+      updateDistanceDisplay();
+    }
+  }
+
+  previousCoords = currentCoords;
+}
+
+if (navigator.geolocation) {
+  setInterval(() => {
+    navigator.geolocation.getCurrentPosition(trackLocation, console.error);
+  }, 10000);
+}
