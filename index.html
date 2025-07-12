@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Agent AI - Dziwnów v5.2.1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <header>
+        <h1>Witaj w Dziwnowie!</h1>
+        <p id="date"></p>
+        <div id="weather"></div>
+        <button onclick="toggleNightMode()">🌙 Tryb nocny</button>
+    </header>
+    <main>
+        <section id="quote-section">
+            <h2>Cytat dnia</h2>
+            <p id="quote"></p>
+        </section>
+        <section id="place-section">
+            <h2>Miejsce dnia</h2>
+            <p id="place-name"></p>
+            <p id="place-desc"></p>
+        </section>
+        <section id="map-section">
+            <h2>Mapa Dziwnowa</h2>
+            <div id="map"></div>
+        </section>
+        <section id="notes-section">
+            <h2>Twój dziennik</h2>
+            <form id="note-form">
+                <textarea id="note-input" placeholder="Dodaj notatkę..."></textarea>
+                <button type="submit">Zapisz</button>
+            </form>
+            <ul id="note-list" style="list-style: none; padding-left: 0;"></ul>
+        </section>
+        <section id="reminder-section">
+
+    </main>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

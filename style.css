@@ -1,0 +1,127 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f0f4f8;
+    color: #000;
+}
+
+header, main {
+    padding: 20px;
+}
+
+h1, h2 {
+    margin-top: 0;
+}
+
+#map {
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+textarea, input[type="text"], input[type="datetime-local"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 10px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+button.delete {
+    background-color: #dc3545;
+    float: right;
+    margin-left: 10px;
+}
+
+/* Tryb nocny */
+body.night-mode {
+    background: #121212;
+    color: #f0f0f0;
+}
+
+body.night-mode textarea,
+body.night-mode input[type="text"],
+body.night-mode input[type="datetime-local"] {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+    border: 1px solid #444;
+}
+
+body.night-mode button {
+    background-color: #1a73e8;
+}
+
+body.night-mode button.delete {
+    background-color: #ff4c4c;
+}
+
+
+/* Poprawione przyciski Usuń */
+button.delete-small {
+    font-size: 14px;
+    padding: 4px 10px;
+    margin-left: 10px;
+    float: right;
+}
+body.night-mode button.delete-small {
+    background-color: #ff4c4c;
+}
+
+
+/* Poprawiony styl przycisków Usuń */
+button.delete-small {
+    font-size: 12px;
+    padding: 2px 6px;
+    margin-left: 10px;
+    margin-top: -2px;
+    vertical-align: middle;
+}
+
+/* Styl dla listy zadań */
+#todo-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1e1e1e;
+    padding: 6px 10px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    color: #f0f0f0;
+}
+
+/* Checkbox + tekst razem */
+#todo-list li input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+
+/* Styl dla wpisów w przypomnieniach i dzienniku */
+.entry-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+    padding: 6px 10px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    word-break: break-word;
+}
+
+.entry-box span {
+    flex-grow: 1;
+    margin-right: 10px;
+}
